@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Définir les paramètres par défaut
+MIRROR=""
+
+# Vérifier si l'option --iut-mirror est utilisée
+if [ "$1" == "--iut-mirror" ]; then
+  # Définir le miroir
+  MIRROR="$2"
+  # Supprimer les options --iut-mirror et le miroir de la liste des arguments
+  shift 2
+fi
+
+# Créer le répertoire ~/.config/containers si il n'existe pas
+mkdir -p ~/.config/containers
+
+# Modifier le fichier de configuration pour configurer le registre de conteneurs
+echo "[registries.search]" > ~/.config/containers/registries.conf
+echo "registries = ['${MIRROR}']" >> ~/.config/containers/registries.conf

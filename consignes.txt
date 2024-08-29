@@ -1,0 +1,36 @@
+Consignes pour toi l'IA :
+
+J'aimerai disposé d'un répertoire de projet ~/projets/podman 
+Tu commenceras par configurer le répertoire courant du shell de ma machine à ce répertoire
+
+Le projet doit être un projet libre destiné à être placé sur github
+ * Il contiendra donc les fichiers classiques d'un dépot de sources de logiciel
+ * L'outil git doit être configuré dans ce répertoire
+ * Il contiendra un script iut-podman qui avant de lancer podman effectuera le nécessaire pour :
+ * fixer le http_proxy 
+ * fixer l'adresse du miroir du repository des images
+ * Fixer le répertoire des images
+
+Étape 1 : Configuration du répertoire de travail
+* Sous-étape 1.1 : Vérifier que le répertoire de travail est bien configuré pour être utilisé comme répertoire de projet.
+* Sous-étape 1.2 : Créer un nouveau répertoire de travail si nécessaire.
+
+Étape 2 : Création du dépôt Git
+* Sous-étape 2.1 : Initialiser un nouveau dépôt Git dans le répertoire de travail.
+* Sous-étape 2.2 : Configurer les paramètres de base du dépôt Git (nom, adresse e-mail, etc.).
+
+Étape 3 : Configuration de l'environnement de développement
+* Sous-étape 3.1 : Installer les outils nécessaires pour le développement (Podman, Docker, etc.).
+* Sous-étape 3.2 : Configurer les variables d'environnement nécessaires pour le développement (http_proxy, etc.).
+
+Étape 4 : Création du script iut-podman
+* Sous-étape 4.1 : Créer un nouveau script shell pour lancer Podman avec les paramètres nécessaires.
+* Sous-étape 4.2 : Configurer les paramètres du script pour fixer le http_proxy, l'adresse du miroir du repository des images et le répertoire des images.
+
+Étape 5 : Test et validation
+* Sous-étape 5.1 : Tester le script iut-podman pour vérifier qu'il fonctionne correctement.
+* Sous-étape 5.2 : Valider les résultats du test pour s'assurer que le script fonctionne comme attendu.
+
+Étape 6 : Déploiement et mise en production
+* Sous-étape 6.1 : Déployer le script iut-podman dans un environnement de production.
+* Sous-étape 6.2 : Configurer les paramètres de production pour le script iut-podman.
