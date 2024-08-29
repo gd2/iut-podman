@@ -15,29 +15,29 @@ Le projet doit être un projet libre destiné à être placé sur github
  * fixer l'adresse du miroir du repository des images
  * Fixer le répertoire des images
 
-Étape 1 : Configuration du répertoire de travail
-* Sous-étape 1.1 : Vérifier que le répertoire de travail est bien configuré pour être utilisé comme répertoire de projet.
-* Sous-étape 1.2 : Créer un nouveau répertoire de travail si nécessaire.
+Étape 1 : Configuration du répertoire de travail [not started]
+* Sous-étape 1.1 : Vérifier que le répertoire de travail est bien configuré pour être utilisé comme répertoire de projet. [not started]
+* Sous-étape 1.2 : Créer un nouveau répertoire de travail si nécessaire. [not started]
 
-Étape 2 : Création du dépôt Git
-* Sous-étape 2.1 : Initialiser un nouveau dépôt Git dans le répertoire de travail.
-* Sous-étape 2.2 : Configurer les paramètres de base du dépôt Git (nom, adresse e-mail, etc.).
+Étape 2 : Création du dépôt Git [not started]
+* Sous-étape 2.1 : Initialiser un nouveau dépôt Git dans le répertoire de travail. [not started]
+* Sous-étape 2.2 : Configurer les paramètres de base du dépôt Git (nom, adresse e-mail, etc.). [not started]
 
-Étape 3 : Configuration de l'environnement de développement
-* Sous-étape 3.1 : Installer les outils nécessaires pour le développement (Podman, Docker, etc.).
-* Sous-étape 3.2 : Configurer les variables d'environnement nécessaires pour le développement (http_proxy, etc.).
+Étape 3 : Configuration de l'environnement de développement [not started]
+* Sous-étape 3.1 : Installer les outils nécessaires pour le développement (Podman, Docker, etc.). [not started]
+* Sous-étape 3.2 : Configurer les variables d'environnement nécessaires pour le développement (http_proxy, etc.). [not started]
 
-Étape 4 : Création du script iut-podman
-* Sous-étape 4.1 : Créer un nouveau script shell pour lancer Podman avec les paramètres nécessaires.
-* Sous-étape 4.2 : Configurer les paramètres du script pour fixer le http_proxy, l'adresse du miroir du repository des images et le répertoire des images.
+Étape 4 : Création du script iut-podman [in progress]
+* Sous-étape 4.1 : Créer un nouveau script shell pour lancer Podman avec les paramètres nécessaires. [completed]
+* Sous-étape 4.2 : Configurer les paramètres du script pour fixer le http_proxy, l'adresse du miroir du repository des images et le répertoire des images. [in progress]
 
-Étape 5 : Test et validation
-* Sous-étape 5.1 : Tester le script iut-podman pour vérifier qu'il fonctionne correctement.
-* Sous-étape 5.2 : Valider les résultats du test pour s'assurer que le script fonctionne comme attendu.
+Étape 5 : Test et validation [not started]
+* Sous-étape 5.1 : Tester le script iut-podman pour vérifier qu'il fonctionne correctement. [not started]
+* Sous-étape 5.2 : Valider les résultats du test pour s'assurer que le script fonctionne comme attendu. [not started]
 
-Étape 6 : Déploiement et mise en production
-* Sous-étape 6.1 : Déployer le script iut-podman dans un environnement de production.
-* Sous-étape 6.2 : Configurer les paramètres de production pour le script iut-podman.
+Étape 6 : Déploiement et mise en production [not started]
+* Sous-étape 6.1 : Déployer le script iut-podman dans un environnement de production. [not started]
+* Sous-étape 6.2 : Configurer les paramètres de production pour le script iut-podman. [not started]
 
 **Consignes sur les états**
 
@@ -61,3 +61,16 @@ Le projet doit être un projet libre destiné à être placé sur github
 * Il doit contenir les informations nécessaires pour comprendre les étapes du projet, telles que les objectifs, les tâches et les résultats attendus.
 * Il doit être utilisé en conjonction avec le fichier memory.ia pour obtenir une vue complète du projet.
 * Il doit être mis à jour régulièrement pour refléter les changements dans les étapes du projet.
+
+**Consigne : Avertissement pour les commandes qui peuvent effacer des fichiers**
+
+Lorsque je propose une commande qui peut effacer des fichiers, je vais ajouter un avertissement pour vous prévenir du risque potentiel.
+
+**Format de l'avertissement :**
+
+"Attention : cette commande peut effacer des fichiers [nom des fichiers ou type de fichiers] dans le répertoire [nom du répertoire]. Assurez-vous de sauvegarder vos fichiers importants avant d'exécuter cette commande."
+
+**Exemple :**
+
+"Attention : cette commande peut effacer des fichiers non suivis par Git dans le répertoire ~/projets/podman. Assurez-vous de sauvegarder vos fichiers importants avant d'exécuter cette commande."
+

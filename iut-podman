@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Définir les paramètres par défaut
-MIRROR=""
+MIRROR="https://proxy.iut.uca.fr:8443"
+PROXY="http://proxy.iut.uca.fr:8080"
+IMAGE_DIR=""
 
 # Vérifier si l'option --iut-mirror est utilisée
 if [ "$1" == "--iut-mirror" ]; then
@@ -11,9 +13,58 @@ if [ "$1" == "--iut-mirror" ]; then
   shift 2
 fi
 
-# Créer le répertoire ~/.config/containers si il n'existe pas
-mkdir -p ~/.config/containers
+# Vérifier si l'option --iut-proxy est utilisée
+if [ "$1" == "--iut-proxy" ]; then
+  # Définir le proxy
+  PROXY="$2"
+  # Supprimer les options --iut-proxy et le proxy de la liste des arguments
+  shift 2
+fi
 
-# Modifier le fichier de configuration pour configurer le registre de conteneurs
-echo "[registries.search]" > ~/.config/containers/registries.conf
-echo "registries = ['${MIRROR}']" >> ~/.config/containers/registries.conf
+# Vérifier si l'option --iut-image-dir est utilisée
+if [ "$1" == "--iut-image-dir" ]; then
+  # Définir le répertoire des images
+  IMAGE_DIR="$2"
+  # Supprimer les options --iut-image-dir et le répertoire des images de la liste des arguments
+  shift 2
+fi
+
+# Créer le répertoire /home/scratch/$USER si il n'existe pas
+mkdir -p /home/scratch/$USER
+
+# Fonction de remplacement pour les modifications non destructives
+replace_line() {
+  local file="$1"
+  local pattern="$2"
+  local replacement="$3"
+  if grep -q "${pattern}" "${file}"; then
+    sed -i "s/${pattern}/${replacement}/g" "${file}"
+  else
+    echo "${replacement}" >> "${file}"
+  fi
+}
+
+# Créer le fichier registries.conf si il n'existe pas
+if [ ! -f /home/scratch/$USER/registries.conf ]; then
+  > /home/scratch/$USER/registries.conf
+fi
+
+# Ajouter les lignes nécessaires pour configurer le registre de conteneurs
+replace_line /home/scratch/$USER/registries.conf "^registries = \[.*\]$" "registries = ['${MIRROR}']"
+replace_line /home/scratch/$USER/registries.conf "^$" "[registries.search]"
+replace_line /home/scratch/$USER/registries.conf "^$" "registries = ['${MIRROR}']"
+
+# Configurer le proxy si nécessaire
+if [ -n "${PROXY}" ]; then
+  replace_line /home/scratch/$USER/registries.conf "^http_proxy=.*$" "http_proxy=${PROXY}"
+  replace_line /home/scratch/$USER/registries.conf "^$" "http_proxy=${PROXY}"
+fi
+
+# Configurer le répertoire des images si nécessaire
+if [ -n "${IMAGE_DIR}" ]; then
+  replace_line /home/scratch/$USER/registries.conf "^image_dir=.*$" "image_dir=${IMAGE_DIR}"
+  replace_line /home/scratch/$USER/registries.conf "^$" "image_dir=${IMAGE_DIR}"
+fi
+
+# Appeler podman avec les arguments restants
+podman "$@"
