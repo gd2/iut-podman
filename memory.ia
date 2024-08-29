@@ -1,0 +1,8 @@
+Connaissances et expériences acquises pendant le projet :
+
+* Les états doivent être sauvegardés régulièrement pour éviter de perdre des informations importantes.
+* Les états doivent être mis à jour après chaque action ou tâche accomplie pour refléter l'état actuel du projet.
+* Les états peuvent prendre les valeurs suivantes :
+ + [not started] : l'étape n'a pas été commencée.
+ + [in progress] : l'étape est en cours de réalisation.
+ + [completed] : l'étape a été terminée avec succès.

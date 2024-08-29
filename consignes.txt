@@ -1,5 +1,9 @@
 Consignes pour toi l'IA :
 
+Charge le fichier consignes.txt pour recharger les étapes et sous-étapes du projet et acquérir les consignes du projet.
+Charge le fichier memory.ia pour recharger mes connaissances et expériences acquises pendant le projet.
+Charge le fichier iut-podman pour recharger le script iut-podman que j'ai créé pour configurer le miroir de Podman.
+
 J'aimerai disposé d'un répertoire de projet ~/projets/podman 
 Tu commenceras par configurer le répertoire courant du shell de ma machine à ce répertoire
 
@@ -34,3 +38,26 @@ Le projet doit être un projet libre destiné à être placé sur github
 Étape 6 : Déploiement et mise en production
 * Sous-étape 6.1 : Déployer le script iut-podman dans un environnement de production.
 * Sous-étape 6.2 : Configurer les paramètres de production pour le script iut-podman.
+
+**Consignes sur les états**
+
+* Les états doivent être sauvegardés régulièrement pour éviter de perdre des informations importantes.
+* Les états doivent être mis à jour après chaque action ou tâche accomplie pour refléter l'état actuel du projet.
+* Les états peuvent prendre les valeurs suivantes :
+ + [not started] : l'étape n'a pas été commencée.
+ + [in progress] : l'étape est en cours de réalisation.
+ + [completed] : l'étape a été terminée avec succès.
+
+**Consignes pour memory.ia**
+
+* Le fichier memory.ia est utilisé pour stocker les connaissances et expériences acquises pendant le projet.
+* Il doit contenir les informations importantes qui ont été acquises pendant le projet, telles que les états des étapes et les résultats des tests.
+* Il ne doit pas contenir la description des étapes, qui est stockée dans le fichier consignes.txt.
+* Il doit être mis à jour régulièrement pour refléter l'état actuel du projet.
+
+**Consignes pour consignes.txt**
+
+* Le fichier consignes.txt est utilisé pour stocker la description des étapes du projet.
+* Il doit contenir les informations nécessaires pour comprendre les étapes du projet, telles que les objectifs, les tâches et les résultats attendus.
+* Il doit être utilisé en conjonction avec le fichier memory.ia pour obtenir une vue complète du projet.
+* Il doit être mis à jour régulièrement pour refléter les changements dans les étapes du projet.
